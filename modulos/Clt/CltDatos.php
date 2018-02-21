@@ -7,6 +7,7 @@ if(!isset($_SESSION)){
 $root = $_SESSION['ruta'];
 include ($root."lib/mysql/mysql.php");
 if($_POST){
+    $idref=$rnombre=$rpar=$rtel=$rempresa=$rdir=$rtrab='';
     $code=$_POST['code'];
     $sql="SELECT * FROM clientes2 where idclt=".$code." limit 1;";
     $query=  consulta($sql);

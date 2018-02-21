@@ -34,10 +34,11 @@ else{
         <link rel="stylesheet" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
         <script src="../../js/vendor/jquery-1.11.0.js"></script>
         <script src="../../js/vendor/bootstrap.min.js"></script>
         <script src="../../js/main.js"></script>
-        <!--<script src="js/jquery-barcode.min.js"></script>-->
+        <script src="../../js/jquery.dataTables.min.js"></script>
         <!--<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
         
         <script src="../../js/ie10-viewport-bug-workaround.js"></script>
@@ -71,18 +72,15 @@ else{
     <form class="user_div">
         <label class="noticias list-group-item btn-primary">Seleccion de Clientes</label>
         <table id="emp" class="table table-striped" >
+            <thead>
                 <tr style="background-color: lightgrey;" >
                     <td style="text-align: center;"></td>
                     <td><b>Clave</b></td>
                     <td><b>Telefono</b></td> 
                     <td><b>Nombre</b></td>                    
                 </tr>
-                <tr>
-                    <td></td>
-                    <td><input name="clv"  value="<?php echo $clv; ?>" autofocus onchange="empFiltr()"></td>
-                    <td><input name="tel"  value="<?php echo $tel; ?>" autofocus onchange="empFiltr()"></td>
-                    <td><input name="name" value="<?php echo $name; ?>" onchange="empFiltr()"></td>
-                </tr>
+            </thead>
+            <tbody>
                 <?php
                 $res = consulta($sql);
                 foreach ($res as $row) {
@@ -91,7 +89,11 @@ else{
                     <?php
                 }
                 ?>
+            </tbody>
         </table>       
-        </form>        
+        </form>  
+        <script type="text/javascript">
+             $('#emp').DataTable();
+        </script>
     </body>
 </html>

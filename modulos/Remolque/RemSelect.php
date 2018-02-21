@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-    <?php
-$root = $_SERVER['DOCUMENT_ROOT'];
-include ($root.'/lib/mysql/mysql.php');
-ini_set('error_reporting', 0);
+<?php
 if(!isset($_SESSION)){ 
     session_start(); 
-}
+} 
+$hospedaje = $_SESSION['hpd'];
+$root = $_SESSION['ruta'];
+include ($root.'/lib/mysql/mysql.php');
+ini_set('error_reporting', 0);
 $tipo=$_SESSION['tipo'];
 
 $_SESSION['tbl']="empleados";
