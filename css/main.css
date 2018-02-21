@@ -1,0 +1,90 @@
+@media (max-width: 950px) {//chico
+ .m{
+      display:  block;      
+  }
+  .m2{
+      display: none;
+  }
+  .Menu-Titulo:hover{
+    color: rgb(23, 202, 53);
+    cursor:pointer;
+}
+.Menu-Titulo{
+    list-style: none;
+    color: white;
+    
+}
+li{
+    list-style: none;
+    color: white;
+}
+ul{
+    -webkit-padding-start: 0px;
+    margin-bottom: 0px;
+      margin-top: 1em;
+}
+a:hover{
+    text-decoration: none;
+    cursor:pointer;
+}
+a{
+    color: #E0E0E0;
+}
+
+#clock .weekdays span{
+	opacity:0.2;
+	padding:0 0.2em;
+}
+#clock .display{
+  text-align: center;
+  padding: 3em 1em 1em;
+  border-radius: 1em;
+  position: relative;
+  height: 8em;
+  width: 15em;
+}
+#clock{
+  width: 90%;
+  padding: 2%;
+  margin: 46px -65px 25px;
+  border-radius: 1em;
+}
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@media (min-width: 900px) { 
+.m{
+      display: none; 
+}
+.m2{
+      display:  block;
+}
+.Menu-Titulo2:hover{
+    color: red;
+    cursor:pointer;
+}
+.Menu-Titulo2{
+    list-style: none;
+}
+li{
+   list-style: none;
+}
+ul{
+    -webkit-padding-start: 0px;
+    margin-bottom: 0px;
+}
+a:hover{
+    text-decoration: none;
+    cursor:pointer;
+}
+a{
+    color: #000;
+}
+
+}
+.lo{
+      float: right;
+}
+////////////////////////////////////////////////////////////////////////////////////

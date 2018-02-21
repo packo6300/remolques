@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+        <table style="width: 750px;" >
+            <tr>
+                <td valign="middle" style="width: 230px;">  
+                    <center><img src="{$urlimg}" style="width: 100px;" ><BR>Renta-Venta-Refacciones</center>
+                </td>
+                <td  style="width: 170px;"><br>
+                    <p style="font-size: xx-small; text-align: center; ">81a y 15a Nº 8407
+                        COL.AEROPUERTO CHIHUAHUA,CHIH.
+                        TEL.(614)446-5109 CEL. 427-3486.</p>
+                </td>
+                <td  style="width: 180px; text-align: center;"><br>
+                    <p style="font-size: xx-small;">MONTES URALES Nº 6725
+                        FRACC. LA CUESTA JUAREZ,CHIH. <br>
+                        TEL.(656)637-7348</p>
+                </td>
+                <td><center><b>Contrato de Renta</b><br><br><label style="width: 4px;">Nº:</label><label style="width: 15px;">{$folio}</label></center>
+				<BR><label style="font-size: x-small;">www.remolquesaeropuerto.com</label>
+				</td>
+            </tr>
+        </table><br>
+        <table style="width: 750px;" border="0" >
+                <tr>
+                    <th valign="middle" style="height: 30px;" colspan="4" width="50%" bgcolor="#F0F0F0">Cliente:</th>
+                    <th valign="middle" style="height: 30px;" colspan="4" width="50%" bgcolor="#F0F0F0">Remolque:</th>
+                </tr ><tr style="">
+                        <th  colspan="2" width="10%" bgcolor="#F0F0F0">Nombre:</th>
+                        <td colspan="2" width="46%">{$nombre}</td>
+                        <th bgcolor="#F0F0F0">Tipo:</th>
+                        <td colspan="3" width="34%">{$tipo}</td>
+                </tr><tr style="">
+                        <th colspan="2" bgcolor="#F0F0F0">Dirección:</th>
+                        <td colspan="2">{$direccion}</td>
+                        <th bgcolor="#F0F0F0">Placa:</th>
+                        <td >{$placa}</td>
+                        <th bgcolor="#F0F0F0">Llantas:</th>
+                        <td >{$eje}</td>
+                </tr><tr style="">
+                        <th colspan="2" bgcolor="#F0F0F0">Teléfono:</th>
+                        <td colspan="2">{$tel}</td>
+                        <th bgcolor="#F0F0F0">Estructura:</th>
+                        <td >{$estructura}</td>
+                        <th bgcolor="#F0F0F0">Extra:</th>
+                        <td>{$extra}</td>
+                </tr><tr style="">
+                        <th colspan="2" bgcolor="#F0F0F0">Celular:</th>
+                        <td colspan="2">{$cel}</td>
+                        <th bgcolor="#F0F0F0">Rampas:</th>
+                        <td >{$rampas}</td>
+                        <th bgcolor="#F0F0F0">Luces:</th>
+                        <td >{$luces}</td>
+                </tr><tr style="">
+                        <th colspan="2" bgcolor="#F0F0F0">Identificación:</th>
+                        <td colspan="2">{$identif}</td>
+                        <th bgcolor="#F0F0F0">Conector:</th>
+                        <td >{$conector}</td>
+                        <th bgcolor="#F0F0F0">Gato:</th>
+                        <td >{$gato}</td>
+                </tr><tr style="">
+                        <th valign="middle" style="height: 15px;" colspan="8" bgcolor="#F0F0F0">Datos del Vehiculo:</th>
+                        
+                        
+                </tr><tr style="">
+                        <th bgcolor="#F0F0F0">Marca:</th>
+                        <td>{$marca}</td>
+                        <th bgcolor="#F0F0F0">Modelo:</th>
+                        <td>{$modelo}</td>
+                        <th bgcolor="#F0F0F0">Placas:</th>
+                        <td >{$autplaca}</td>
+                        <th bgcolor="#F0F0F0">Estado:</th>
+                        <td>{$estado}</td>
+                </tr><tr>
+                        
+                        <th bgcolor="#F0F0F0">Color:</th>
+                        <td colspan="3">{$color}</td>
+                </tr><tr>
+                        <th colspan="4" bgcolor="#F0F0F0">Referencia:</th>
+						<th bgcolor="#F0F0F0">Parentesco:</th>
+						<td colspan="3">{$par}</td>
+                </tr><tr>
+                        <th bgcolor="#F0F0F0">Nombre:</th>
+                        <td colspan="3">{$rnombre}</td>						
+                        <th bgcolor="#F0F0F0">Tel:</th>
+                        <td>{$rtel}</td>
+                </tr><tr>
+                    <th bgcolor="#F0F0F0">Dirección:</th>
+                    <td colspan="7">{$rdir}</td>
+                </tr>
+            </table>
+            <br><table style="width:700px" border="1" >
+        <tr>
+                <th bgcolor="#F0F0F0" style="width:150px">Fecha de Renta:</th>
+                <td style="width:240px">{$ini}</td>
+                <th bgcolor="#F0F0F0" style="width:70px">Hora:</th>
+                <td style="width:70px">{$hini}</td>
+                <th bgcolor="#F0F0F0" style="width:100px">Total de dias:</th>
+                <td align="right" style="width:70px" ><b>{$dias}</b></td>
+        </tr>
+        <tr>
+                <th bgcolor="#F0F0F0" style="width:150px">Fecha de Entrega:</th>
+                <td style="width:240px">{$fin}</td>
+                <th bgcolor="#F0F0F0" style="width:70px">Hora:</th>
+                <td style="width:70px">{$hfin}</td>
+                <th bgcolor="#F0F0F0" style="width:110px">Renta por Día:</th>
+                <td align="right" style="width:70px" ><b>{$pordia|string_format:"%.2f"}</b></td>
+        </tr>
+        <tr>
+                <td colspan="4" rowspan="3" valign="top"><b>Comentarios:</b> {$comenta}</td>
+                <th align="left">Deposito:</th>
+                <td align="right"><b>{$deposito|string_format:"%.2f"}</b></td>
+        </tr><tr>
+                <th align="left">Cargos extra:</th>
+                <td align="right"><b>{$extras|string_format:"%.2f"}</b></td>
+        </tr>
+        <tr>
+                <th align="left">Total:</th>
+                <td align="right"><b>{$total|string_format:"%.2f"}</b></td>
+        </tr>
+</table>
+
+<table style="width:750px">
+    <tr bgcolor="#F0F0F0">
+        <td ><b>CONDICIONES DE RENTA</b></td>
+    </tr>
+    <tr>
+        <td>
+            <ul style="font-size: x-small;">
+                <li>Si usted no entrega el remolque o dolly en el lugar, dia y hora especificados en el contrato de renta se hacen cargos adicionales.</li>
+                <li>Al entregar usted el remolque o dolly, se revisara detalladamente y se harán cargos por los daños encontrados.</li>
+                <li>Su pago por la renta del remolque o dolly, NO incluye servicio de asistencia local y/o carreteras, por lo que se recomienda revisar el equipo antes de salir.</li>
+                <li>El arrendatario sera su responsabilidad civil o penal en caso de accidente, así como la entrega del equipo en las condiciones en las que sale de la empresa.</li>
+                <li>El arrendatario se compromete a pagar el remolque o dolly, en caso de perdida o descompostura parcial o total, obligandose también a cubrir la renta hasta la total reposicion del remolque.</li>
+                <li>Estrictamente prohibido traspasar, subarrendar o ceder sus derechos de todo o en parte del remolque.</li>
+            </ul>
+            <center>_______________<br>Acepto condiciones.  </center>
+        </td>
+    </tr>
+</table>
+<br>
+<center>
+    --------------------------------------------------------------------------------------------------------------------------------------------------
+</center>
+<table style="width:750px;">
+    <tr>
+        <td style="width:530px;"><b>PAGARE</b></td>
+        <td align="right" >BUENO POR: $</td>
+        <td align="right" style="width:70px;border:1px solid black;">{$valor|string_format:"%.2f"}</td>
+    </tr><tr>
+        <td align="right" style="font-size: x-small;" colspan="3">En Chihuahua,Chih. A {$dia} DE {$mes} DEL {$year}</td>
+    </tr><tr>
+        <td colspan="3"><p style="font-size: x-small;margin: auto;">Debo(emos) y pagaré(mos) incondicionalmente por este pagaré a la orden de Martha Canales Ochoa en calle 81a. y 15a.#8407 col. Aeropuerto en la ciudad de chihuahua,Chih. EL_______ DE _________ DEL 20__</p>
+    </tr><tr>
+        <td align="left" style="font-size: x-small;" colspan="3">la cantidad de:</td>
+    </tr><tr>
+        <td colspan="3" style="font-size: x-small;border:1px solid black;"><CENTER><b>{$s} <label>PESOS 00/100</label></b></CENTER></td>
+    </tr><tr>
+        <td colspan="3"><p style="font-size: x-small;margin: auto;">Valor recibido a mi(nuestra) entera satisfacción. Esta sujeto a la condicion de que, al no pagarse a su vencimiento causara intereses moratorios al tipo de_____% mensual pagadero en esta ciudad juntamente con el principal.</p>
+    </tr><tr>
+        <td style="font-size: x-small;"><b>Deudor:</b> {$nombre}<br> <b>Dirección: </b> {$direccion} <b>Tel:</b> {$tel} <br> <b>Población:</b>_______________________________________</td>
+        <td colspan="2">Acepto(amos)<br>Firma(s):_____________________</td>
+    </tr>
+</table>
+</body>
+</html>

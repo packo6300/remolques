@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <br><br>
+        <table width="40%">
+            <tr>
+                <td valign="middle">  
+                    <center>
+                        <img src="http://localhost:81/img/logopng.png" style="width: 150px;" ><br>
+                        <b>Remolques Aeropuerto</b><br>
+                        <b>Nota de Venta</b><br>
+                        <b>Folio:{$folio}</b><br>
+                    </center>
+                        {$dia} de {$mes} del {$year} {$hora|date_format:"%I:%M %p"}
+                </td>
+                <td></td>
+            </tr>   
+        </table>
+<br><br><br>
+<table width="40%" border="1" cellpadding="2" cellspacing="1">
+<tr>
+    <th bgcolor="#F0F0F0">Cliente:</th>
+    <td >{$nombre}</td>
+</tr><tr>
+    <th bgcolor="#F0F0F0">Saldo:</th>
+    <td>{$saldo|string_format:"%.2f"}</td>
+</tr><tr>
+    <th bgcolor="#F0F0F0">Total:</th>
+    <td>{$total|string_format:"%.2f"}</td>
+</tr>
+</table>
+<br><br><br>
+
+<table width="40%" border="0" cellpadding="2" cellspacing="0">
+<tr bgcolor="#F0F0F0">
+	<th colspan="2" bgcolor="#F0F0F0" >Descripción</th>
+	<th bgcolor="#F0F0F0" >Cant.</th>
+	<th bgcolor="#F0F0F0" >Precio</th>
+</tr>
+{section name=i loop=$productos}
+<tr>
+	<td colspan="2" align="center">{$productos[i].descr}</td>
+	<td align="right">{$productos[i].cant}</td>
+	<td align="right">{$productos[i].precio|string_format:"%.2f"}</td>
+</tr>
+{/section}
+<tr>
+    <td colspan="2"></td>
+	<th  align="left" bgcolor="#F0F0F0">Total:</th>
+	<td align="right"><b>{$total|string_format:"%.2f"}</b></td>
+</tr>
+</table>
+    </body>
+</html>

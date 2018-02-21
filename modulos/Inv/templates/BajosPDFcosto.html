@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <br><br>
+        <table width="100%" border="0" cellpadding="2" cellspacing="1">
+            <tr>
+                <td valign="middle" style="width: 230px;">  
+                    <center><img src="http://localhost:81/img/logopng.png" style="width: 100px;" ><BR>Renta-Venta-Refacciones Reparaciones</center>
+                </td>
+                <td  style="width: 170px;"><br>
+                    <p style="font-size: xx-small; text-align: center; ">81a y 15a Nº 8407
+                        COL.AEROPUERTO CHIHUAHUA,CHIH.
+                        TEL.(614)446-5109 CEL. 427-3486.</p>
+                </td>
+                <td  style="width: 180px; text-align: center;"><br>
+                    <p style="font-size: xx-small;">MONTES URALES Nº 6725
+                        FRACC. LA CUESTA JUAREZ,CHIH. <br>
+                        TEL.(656)637-7348</p>
+                </td>
+                <td valign="middle">
+                    <BR><label style="font-size: x-small;">www.remolquesaeropuerto.com</label>
+		</td>
+            </tr>
+        </table>
+        <br><br><br>
+        <table width="100%" border="0">
+        <tr>
+                <td align="center" width="10%" bgcolor="#F0F0F0"><b>{$titulo}</b></td>
+        </tr>
+        </table>
+        <br><br>
+        <table width="100%" border="0" style='page-break-after:always;'>
+        <tr bgcolor="#F0F0F0" style='page-break-after:always;'>
+            <td bgcolor="#F0F0F0" align="center"><b>Clave</b></td>
+            <td bgcolor="#F0F0F0" ><b>Descripción</b></td>
+            <td bgcolor="#F0F0F0" align="center"><b>Minimo</b></td>	
+            <td bgcolor="#F0F0F0" align="center"><b>Cant. Actual</b></td>
+            <td bgcolor="#F0F0F0" align="center"><b>Costo</b></td>
+            <td bgcolor="#F0F0F0" align="center"><b>Precio</b></td>
+        </tr>
+        {section name=i loop=$productos}
+        <tr>
+            <td style="width: 120px;">{$productos[i].clave}</td>
+            <td style="width: 120px;">{$productos[i].descr}</td>
+            <td style="width: 120px;" align="right">{$productos[i].minimo}</td>
+            <td style="width: 120px;" align="right">{$productos[i].cantidad}</td>
+            <td style="width: 120px;" align="right">{$productos[i].costo}</td>
+            <td style="width: 120px;" align="right">{$productos[i].precio}</td>
+        </tr>
+        {/section}
+        </table>
+    </body>
+</html>
