@@ -10,15 +10,16 @@ $idref=$_POST['code'];
 if($idref=='new'){
     $idref=0;
 }
-       $sql="SELECT * FROM ovdetalle where folio=$idref";
-       $res=consulta($sql);    
-     ?>
+    $sql="SELECT * FROM ovdetalle where folio=$idref";
+    $res=consulta($sql);
+    $ivaResulset= consulta("select iva from iva;");
+?>
 <script type="text/javascript">
     function cOC2(id){
      $.ajax({type: 'POST',url:"modulos/Ventas/OvPropiedad.php",data:{id:id}
-                    }).done(function (datos){
-                        $("#pant").html(datos);
-                    });
+    }).done(function (datos){
+        $("#pant").html(datos);
+    });
 }
 function elimina(id){
     $.ajax({
@@ -67,11 +68,18 @@ function elimina(id){
 }
 ?>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><label>Total:</label></td>
+        <td colspan="4"></td>
+        <td><label>Subtotal:</label></td>
         <td><input type="text" readonly="" value="<?php echo $subtotal; ?>" name="total"></td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+        <td><label>IVA:</label></td>
+        <td><input type="text" readonly="" value="<?php echo round($subtotal*($ivaResulset['0']['iva']-1),2); ?>" name="iva"></td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+        <td><label>Total:</label></td>
+        <td><input type="text" readonly="" value="<?php echo round($subtotal*($ivaResulset['0']['iva']),2) ?>" name="total"></td>
     </tr>
 </table>            

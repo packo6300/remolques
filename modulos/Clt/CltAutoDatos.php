@@ -1,8 +1,12 @@
 <?php
 
 try {
-$root = $_SERVER['DOCUMENT_ROOT'];
-include ($root."/lib/mysql/mysql.php");
+    if(!isset($_SESSION)){ 
+    session_start(); 
+} 
+$hospedaje = $_SESSION['hpd'];
+$root = $_SESSION['ruta'];
+include ($root.'/lib/mysql/mysql.php');
 
 if($_POST){
     $code=$_POST['code'];

@@ -60,9 +60,9 @@ if ($_POST['idrent']){
             echo json_encode(array("tipo" => "alert-success","re" => $f,"msj" =>"ok"));   
         }
         else{
-            $sql="update rentas set nombre='$nombre',parentesco='$pare',tel='$tel',empresa='$empresa',dir='$dir',trabdir='$trabdir' where idcltrefe=$idpar";
-            //insert($sql);
-            echo json_encode(array("tipo" => "alert-success","re" => $idpar,"msj" =>"Cambios guardados")); 
+            $sql="update rentas set comenta='$comenta' where idrentas=$idpar limit 1";
+            $resultQuery=insert($sql);
+            echo json_encode(array("tipo" => "alert-success","resultQuery" => $resultQuery,"re" => $idpar,"msj" =>"Cambios guardados")); 
         }
 }
 else{

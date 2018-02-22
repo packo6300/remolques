@@ -14,7 +14,7 @@ and open the template in the editor.
         <table width="100%" border="0" cellpadding="2" cellspacing="1">
             <tr>
                 <td valign="middle" style="width: 230px;">  
-                    <center><img src="http://localhost:81/img/logopng.png" style="width: 100px;" ><BR>Renta-Venta-Refacciones Reparaciones</center>
+                    <center><img src="{$img}" style="width: 100px;" ><BR>Renta-Venta-Refacciones Reparaciones</center>
                 </td>
                 <td  style="width: 170px;"><br>
                     <p style="font-size: xx-small; text-align: center; ">81a y 15a Nº 8407
@@ -67,6 +67,16 @@ and open the template in the editor.
         <td align="right">{math equation="x * y" x=$productos[i].cant y=$productos[i].precio format="%.2f"}</td>
 </tr>
 {/section}
+<tr>
+        <td colspan="3"></td>
+	<th  align="left" bgcolor="#F0F0F0">Subtotal:</th>
+	<td align="right"><b>{$subtotal|string_format:"%.2f"}</b></td>
+</tr>
+<tr>
+        <td colspan="3"></td>
+	<th  align="left" bgcolor="#F0F0F0">IVA:</th>
+	<td align="right"><b>{$iva|string_format:"%.2f"}</b></td>
+</tr>
 <tr>
         <td colspan="3"></td>
 	<th  align="left" bgcolor="#F0F0F0">Total:</th>

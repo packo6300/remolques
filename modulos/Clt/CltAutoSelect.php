@@ -1,11 +1,13 @@
 <!DOCTYPE html>
     <?php
-$root = $_SERVER['DOCUMENT_ROOT'];
-include ($root.'/lib/mysql/mysql.php');
-ini_set('error_reporting', 0);
 if(!isset($_SESSION)){ 
     session_start(); 
-}
+} 
+$hospedaje = $_SESSION['hpd'];
+$root = $_SESSION['ruta'];
+include ($root.'/lib/mysql/mysql.php');
+ini_set('error_reporting', 0);
+
 $idclt=$_SESSION['idclt'];
 if ($_POST) {
         $clv=$_POST['clv'];
@@ -32,9 +34,10 @@ else{
         <script src="../../js/vendor/jquery-1.11.0.js"></script>
         <script src="../../js/vendor/bootstrap.min.js"></script>
         <script src="../../js/main.js"></script>
+        <link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
         <!--<script src="js/jquery-barcode.min.js"></script>-->
         <!--<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
-        
+        <script src="../../js/jquery.dataTables.min.js"></script>
         <script src="../../js/ie10-viewport-bug-workaround.js"></script>
         <script>
             function moui(id){
@@ -61,34 +64,31 @@ else{
 }
         </script>
     </head>
-    <body id="cont">
-    
+    <body id="cont">    
     <form class="user_div">
         <label class="noticias list-group-item btn-primary">Seleccion de Automobil</label>
         <table id="emp" class="table table-striped" >
-                <tr style="background-color: lightgrey;" >
+            <thead>
+                <tr>
                     <td style="text-align: center;"></td>
                     <td><b>Clave</b></td>
                     <td><b>Placas</b></td> 
                     <td><b>Modelo</b></td> 
                     <td><b>Marca</b></td> 
                 </tr>
-                <tr>
-                    <td></td>
-                    <td><input name="clv"  value="<?php echo $clv; ?>" autofocus onchange="empFiltr()"></td>
-                    <td><input name="placa" value="<?php echo $placa; ?>" onchange="empFiltr()"></td>
-                    <td><input name="tel"  value="<?php echo $tel; ?>" autofocus onchange="empFiltr()"></td>
-                    <td><input name="name" value="<?php echo $name; ?>" onchange="empFiltr()"></td>                     
-                </tr>
+            </thead>
+            <tbody>
                 <?php
-                    $res=  consulta($sql);
-                    foreach ($res as  $row) {
-                        ?>
-                    <tr onmouseover="moui('<?php echo $row['idcltauto']; ?>')" onmouseout="mouo('<?php echo $row['idcltauto']; ?>')" class="<?php echo $row['idcltauto']; ?>" onclick='selecciona("<?php echo $row['idcltauto']; ?>")'><td><span class="glyphicon glyphicon-ok-circle"></span></td><td><?php echo $row['idcltauto']; ?></td><td><?php echo $row['placa']; ?></td><td><?php echo $row['modelo']; ?></td><td><?php echo $row['marca']; ?></td></tr>
-                    <?php                    
-                    }
-                    ?>
+                $res=  consulta($sql);
+                foreach ($res as  $row) {
+                ?>
+                <tr onmouseover="moui('<?php echo $row['idcltauto']; ?>')" onmouseout="mouo('<?php echo $row['idcltauto']; ?>')" class="<?php echo $row['idcltauto']; ?>" onclick='selecciona("<?php echo $row['idcltauto']; ?>")'><td><span class="glyphicon glyphicon-ok-circle"></span></td><td><?php echo $row['idcltauto']; ?></td><td><?php echo $row['placa']; ?></td><td><?php echo $row['modelo']; ?></td><td><?php echo $row['marca']; ?></td></tr>
+                <?php } ?>
+            </tbody>                
         </table>       
-        </form>        
+        </form>
+        <script type="text/javascript">
+            $('#emp').DataTable();
+        </script>
     </body>
 </html>

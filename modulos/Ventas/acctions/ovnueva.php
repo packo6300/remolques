@@ -1,11 +1,11 @@
 <?php
 
 try {
-$root = $_SERVER['DOCUMENT_ROOT'];
-include ($root."/lib/mysql/mysql.php");
 if(!isset($_SESSION)){ 
     session_start(); 
 }
+$root = $_SESSION['ruta'];
+include ($root."/lib/mysql/mysql.php");
 $idadmin=$_SESSION['idCH'];
 if($_POST){
     $idprov=$_POST['code'];

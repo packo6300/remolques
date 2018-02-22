@@ -26,10 +26,15 @@ function consulta($sql){
 }
 
 function insert($sql){
+    try{
     $connection = getConnection();
     $stmt = $connection->prepare($sql);
-    $stmt->execute();
-    return $stmt;
+    $r=$stmt->execute();
+    }
+    catch (PDOException $e){
+    $r=$e; 
+    }
+    return $r;   
 }
 
 function interval_date($init,$finish){

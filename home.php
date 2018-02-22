@@ -11,11 +11,6 @@ define('ROOT', $root);
 include (ROOT."/lib/mysql/mysql.php");
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -73,24 +68,22 @@ and open the template in the editor.
     <!-- Main jumbotron for a primary marketing message or call to action -->
     
         <div class="m2">
-            <div class="col-lg-2" style=" overflow-y: auto; overflow-x: hidden; height: 24em;">
+            <div class="col-lg-2" style=" overflow-y: auto; overflow-x: hidden; height: 100%;">
                 <br>
                 <?php
                 $sql="SELECT * FROM menu where idAdmin=$idUsr group by cabezera";
                 $res=  consulta($sql);
                 foreach ($res as $k => $r) {
                     ?>
-                
-                    <ul>
-                        <li onclick="$('#<?php echo $r['cabezera']; ?>2').toggle();"><label class="Menu-Titulo2"><?php echo $r['cabezera']; ?> </label></li> <?php
-                           $sql1='SELECT * FROM menu where idAdmin='.$idUsr.' and cabezera="'.$r["cabezera"].'" order by nombre ;';
-                           $res1=  consulta($sql1);
-                           ?> <ul  id="<?php echo $r['cabezera']; ?>2"> <?php
-                                foreach ($res1 as $z => $r1) { ?>
-                           <li><img src="img/puntost.gif" style="margin-top: -3px; margin-right: 2px;"><a onclick="menu('<?php echo $r1['funcion']; ?>')"><?php echo $r1['nombre']; ?></a></li>
-                           <?php } ?>
-                              </ul>
+                <ul>
+                    <li onclick="$('#<?php echo $r['cabezera']; ?>2').toggle();"><label class="Menu-Titulo2"><?php echo $r['cabezera']; ?> </label></li> <?php
+                    $sql1 = 'SELECT * FROM menu where idAdmin=' . $idUsr . ' and cabezera="' . $r["cabezera"] . '" order by nombre ;';
+                    $res1 = consulta($sql1);
+                    ?> <ul  id="<?php echo $r['cabezera']; ?>2"> <?php foreach ($res1 as $z => $r1) { ?>
+                            <li><img src="img/puntost.gif" style="margin-top: -3px; margin-right: 2px;"><a onclick="menu('<?php echo $r1['funcion']; ?>')"><?php echo $r1['nombre']; ?></a></li>
+                        <?php } ?>
                     </ul>
+                </ul>
                 <?php
                 }
                 ?>

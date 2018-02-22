@@ -1,7 +1,10 @@
 <?php
 
 try {
-$root = $_SERVER['DOCUMENT_ROOT'];
+if(!isset($_SESSION)){ 
+    session_start(); 
+}
+$root = $_SESSION['ruta'];
 include ($root."/lib/mysql/mysql.php");
 $idprov=$_POST['code'];
     $sql="delete from ovpropiedad where idovpropiedad=$idprov limit 1;";
