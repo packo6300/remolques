@@ -61,7 +61,7 @@ function nvo(){
 function ocMail(id){
     try{
         $("#pant").html("<center><br><br><br><br><label>Cargando por favor espere...</label><br><img style='width: 100px;' src='img/loading.gif'></center>");
-        $.ajax({type: 'POST',url:"modulos/Ventas/OvMail.php",data:{id:id},
+        $.ajax({type: 'POST',url:"modulos/Ventas/cotizacionMail.php",data:{id:id},
         success: function (data, textStatus, jqXHR) {
             $('#pant').html(data);
         },    
@@ -99,7 +99,7 @@ function ocR(id){
     }  
 }
 function ocVer(id){
-window.open("dom/output2pdf.php?id="+id+"&url=Ventas/OvPDF.php");
+window.open("dom/output2pdf.php?id="+id+"&url=Ventas/CotizacionPDF.php");
 }
 function ocVer2(id){
 window.open("dom/output2pdf2.php?id="+id+"&url=Ventas/OvPDFTicket.php");
@@ -180,8 +180,6 @@ window.open("dom/output2pdf2.php?id="+id+"&url=Ventas/OvPDFTicket.php");
                                           echo "<li><a onclick='ocVer2(".$row['folio'].")'><span class='glyphicon glyphicon-eye-open'></span> Ticket</a></li>";
                                       }
                                       elseif($row["estatus"]=="Cotizacion"){
-                                          echo "<li><a onclick='ocSt(".$row['folio'].",2)'><span class='glyphicon glyphicon-ok'></span> Aplicar</a></li>";
-                                          echo "<li><a onclick='ocSt(".$row['folio'].",4)'><span class='glyphicon  glyphicon-remove'></span> Cancelar</a></li>";
                                           echo "<li><a onclick='mod(".$row['folio'].")'><span class='glyphicon glyphicon-edit'></span> Editar</a></li>";
                                           echo "<li><a onclick='ocVer(".$row['folio'].")'><span class='glyphicon  glyphicon-eye-open'></span> Ver</a></li>";
                                           echo "<li><a onclick='ocMail(".$row['folio'].")'><span class='glyphicon  glyphicon-envelope'></span> Enviar por email</a></li>";

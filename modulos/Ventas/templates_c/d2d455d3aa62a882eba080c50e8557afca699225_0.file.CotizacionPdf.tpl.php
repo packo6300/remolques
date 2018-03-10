@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.26, created on 2018-03-10 18:13:34
+<?php /* Smarty version 3.1.26, created on 2018-03-10 18:19:24
          compiled from "C:\laragon\www\remolques\modulos\Ventas\templates\CotizacionPdf.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5158733395aa4204ee7b9e0_16972424%%*/
+/*%%SmartyHeaderCode:1699041495aa421ac68d643_87909712%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5158733395aa4204ee7b9e0_16972424',
+  'nocache_hash' => '1699041495aa421ac68d643_87909712',
   'variables' => 
   array (
     'img' => 0,
@@ -30,15 +30,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.26',
-  'unifunc' => 'content_5aa4204f00a722_05953485',
+  'unifunc' => 'content_5aa421ac728606_75919155',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5aa4204f00a722_05953485')) {
-function content_5aa4204f00a722_05953485 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5aa421ac728606_75919155')) {
+function content_5aa421ac728606_75919155 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_date_format')) require_once 'C:\\laragon\\www\\remolques\\dom\\smarty\\libs\\plugins\\modifier.date_format.php';
 if (!is_callable('smarty_function_math')) require_once 'C:\\laragon\\www\\remolques\\dom\\smarty\\libs\\plugins\\function.math.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '5158733395aa4204ee7b9e0_16972424';
+$_smarty_tpl->properties['nocache_hash'] = '1699041495aa421ac68d643_87909712';
 ?>
 <!DOCTYPE html>
 <html>
