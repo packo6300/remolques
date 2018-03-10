@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!--
-listo-- comentarios al cerrar renta--- editar renta
 reporte #resntas por remolque(agregar contador)
 editar dias de renta
 editar folio de renta
@@ -8,7 +7,32 @@ listo-- Ov pdf con iva
 iva configurable
 
 plus..
-crear cotizaciones manuales
+crear cotizaciones manuales para rentas
+ALTER TABLE `remolques2`.`remolques` ADD COLUMN `rentas` INTEGER UNSIGNED NOT NULL AFTER `stat`;
+insert into roles(0,'Cotizar','modulos/Ventas/Cotizacion.php',1);
+insert into roles(0,'Configuraciones','modulos/Config/ConfiguracionListar.php',2);
+CREATE TABLE `remolques2`.`cotizaciondetail` (
+  `idcotizaciondetail` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idcotizacion` INTEGER UNSIGNED NOT NULL,
+  `descripcion` VARCHAR(500) NOT NULL,
+  `cantidad` DOUBLE NOT NULL,
+  `subtotal` DOUBLE NOT NULL,
+  PRIMARY KEY (`idcotizaciondetail`)
+)
+ENGINE = InnoDB;
+CREATE TABLE  `remolques2`.`cotizacion` (
+  `idcotizacion` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `cliente` varchar(250) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `subtotal` double NOT NULL,
+  `iva` double NOT NULL,
+  `total` double NOT NULL,
+  `saldo` double NOT NULL,
+  `idadmin` int(10) unsigned NOT NULL,
+  `estatus` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idcotizacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -->
 <html>
     <head>

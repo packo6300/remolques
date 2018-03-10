@@ -11,13 +11,13 @@ $_SESSION['tbl']="remolques";
 $_SESSION['clt'];
 
 $hoy = date("Y-m-d"); 
-$idclt=$_POST['idclt'];
+$idclt= filter_input(INPUT_POST, 'tipo');
 $status=$_POST['status'];
 if($status==""){$status="1";}
 $sql="SELECT * FROM remolques where  tipo like '$idclt%' and stat = $status  order by tipo;";
 ?>
 <script type="text/javascript">
-    function recarga(){
+function recarga(){
    try{
         var s=$("#manual").serialize();
         $.ajax({type: 'POST',url:"modulos/Remolque/Rem.php",data:s
@@ -91,10 +91,13 @@ function eli(id){
                         </td>
                         <td>
                             <label>Tipo</label><br>
-                            <input value="<?php echo $resp; ?>" type="text" name="tipo"  onchange="recarga()">
+                            <input value="<?php echo $idclt; ?>" type="text" name="tipo"  onchange="recarga()">
                         </td>
                         <td>
-                            <label>Placas:</label>
+                            <label># Rentas</label>
+                        </td>
+                        <td>
+                            <label>Placas</label>
                         </td>
                         <td>
                             <label>Estructura</label><br>
@@ -120,8 +123,7 @@ function eli(id){
                     </tr>        
                     <?php
                     $_SESSION['query'] = $sql;
-                    $resul = consulta($sql);
-                    foreach ($resul as  $row) {
+                    foreach (consulta($sql) as  $row) {
                         ?>
                         <tr class='tr_con'>
                         <td>
@@ -138,6 +140,7 @@ function eli(id){
                         <?php
                         echo "<td>" .$row["status"]."</td>";
                         echo "<td>".$row["tipo"]."</td>";
+                        echo "<td>".$row["rentas"]."</td>";
                         echo "<td>" .$row["placa"]."</td>";
                         echo "<td>".$row["estructura"]."</td>";
                         echo "<td>".$row["rampas"]."</td>";

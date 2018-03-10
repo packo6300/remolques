@@ -1,14 +1,11 @@
 ﻿<?php
-if(!isset($_SESSION)){ 
-    session_start(); 
-}
-ini_set('error_reporting', 0);
-header('Content-Type: text/html; charset=UTF-8');
+if(!isset($_SESSION)){session_start();}
 $root = $_SESSION['ruta'];
 include ($root."/lib/mysql/mysql.php");
-if($_POST['idrem']){
+if(isset($_POST['idrem'])){
         $idpar=$_POST['idrem'];
         //////////////////////
+            $rentas=$_POST['rentas'];
             $tipo=$_POST['tipo'];
             $estr=$_POST['estructura'];        
             $rampas= $_POST['rampas'];
@@ -34,11 +31,13 @@ if($_POST['idrem']){
 }
 else{
 $idrem=$_POST['idclt'];
+$edit="";
     if($idrem>0){
        $pgn="Editar remolque";
        $sql="select * from remolques where idrem=$idrem";
        $res=consulta($sql);
         foreach ($res as  $row) {
+            $rentas=$row['rentas'];
             $tipo=$row['tipo'];
             $estr=$row['estructura'];        
             $rampas= $row['rampas'];
@@ -105,6 +104,7 @@ $idrem=$_POST['idclt'];
                 <label>Gato:</label><input type="text" class="form-control" name="gato" value="<?php echo $gato;?>">
             </div>
             <div class="col-xs-6">
+                <label>Rentas:</label><input type="number" class="form-control" name="rentas" value="<?php echo $rentas; ?>">
                 <label>Llantas:</label><input type="text" class="form-control" name="eje" value="<?php echo $eje;?>">
                 <label>Extra:</label><input type="text" class="form-control" name="extra" value="<?php echo $extra;?>">
                 <label>Placa:</label><input type="text" class="form-control" name="placa" value="<?php echo $placa;?>">

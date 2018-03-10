@@ -50,8 +50,10 @@ if ($_POST['idrent']){
             foreach ($row as  $r) {
                 $folio=$r['folio'];
             }
+            //insert("update remolques set rentas=rentas+1 where id");
             $sql="insert into rentas values(0,$idclt,$idrem,'$ini','$hini','$fin','$hfin',$pordia,$deposito,1,'$identifica','$comenta','$edo',$idauto,$idcltref,'$folio',$dias,$extras,$total);";
             insert($sql);
+            insert("update remolques set rentas=rentas+1 where idrem=$idrem;");
             $sql7="SELECT max(idrentas) as s FROM rentas;";
             $row7=  consulta($sql7);
             foreach ($row7 as  $r7) {
