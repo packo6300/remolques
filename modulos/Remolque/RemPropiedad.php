@@ -19,12 +19,12 @@ if(isset($_POST['idrem'])){
             $status= $_POST['status'];
         //////////////////////
         if($idpar=="new"){
-            $sql="insert into remolques values(0,'$tipo','$estr','$rampas','$luces','$conector','$gato','$eje','$extra','$placa','$valor',1);";
+            $sql="insert into remolques values(0,'$tipo','$estr','$rampas','$luces','$conector','$gato','$eje','$extra','$placa','$valor',1,0);";
             insert($sql);
             echo '<div class="alert alert-success"><strong>¡Bien!</strong>Remolque Creado</div>'; 
         }
         else{
-            $sql="update remolques set tipo='$tipo',estructura='$estr',rampas='$rampas',luces='$luces',conector='$conector',gato='$gato',eje='$eje',extra='$extra',placa='$placa',valor=$valor,stat=$status where idrem=$idpar";
+            $sql="update remolques set tipo='$tipo',estructura='$estr',rampas='$rampas',luces='$luces',conector='$conector',gato='$gato',eje='$eje',extra='$extra',placa='$placa',valor=$valor,stat=$status,rentas=$rentas where idrem=$idpar";
             insert($sql);
             echo '<div class="alert alert-success"><strong>¡Bien!</strong>Datos actualizados</div>';  
         }

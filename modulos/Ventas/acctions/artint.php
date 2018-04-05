@@ -14,6 +14,8 @@ if($_POST){
     $ut=$_POST['ut'];
     $folio=$_POST['idrent'];
     $cant=$_POST['cnt'];
+    $ivaResulset= consulta("select iva from iva;");
+    $precio=$precio/$ivaResulset[0]['iva'];
     $sql="insert into ovpropiedad values(0,$idart,$precio,$costo,$ut,$folio,$cant);";
     $r=insert($sql);
     echo json_encode(array("folio" =>$folio,"res"=>$r));    

@@ -12,6 +12,8 @@ if($_POST){
     $precio=$_POST['precio'];
     $folio=$_POST['idrent'];
     $cant=$_POST['cnt'];
+    $ivaResulset= consulta("select iva from iva;");
+    $precio=$precio/$ivaResulset[0]['iva'];
     $sql="insert into cotizaciondetail values(0,$folio,'$desc',$cant,$precio);";
     $r=insert($sql);
     echo json_encode(array("folio" =>$folio,"res"=>$r));    
