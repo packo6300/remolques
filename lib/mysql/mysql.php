@@ -7,7 +7,7 @@ if(!isset($_SESSION)) {
 } 
 function getConnection(){
     $host="localhost";
-    $dbu="root";
+    $dbu="packo";
     $dbp="fallenito";
     //$dbp="01551025";
     $db=$_SESSION['empresa'];
