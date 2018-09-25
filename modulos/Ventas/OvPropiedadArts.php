@@ -57,11 +57,11 @@ function elimina(id){
     <?php
         echo "<td>" .$row["art"]."</td>";                        
         echo "<td>".$row["descr"]."</td>";
-        echo "<td>" .$row["precio"]."</td>";
+        echo "<td>" .round($row["precio"],2)."</td>";
         echo "<td>" .$row["cant"]."</td>";
         $total1=$row["precio"]*$row["cant"];
         $subtotal=$subtotal+$total1;
-        echo "<td>".$total1."</td>";
+        echo "<td>".round($total1,2)."</td>";
     ?>
     </tr>
     <?php
@@ -70,7 +70,7 @@ function elimina(id){
     <tr>
         <td colspan="4"></td>
         <td><label>Subtotal:</label></td>
-        <td><input type="text" readonly="" value="<?php echo $subtotal; ?>" name="total"></td>
+        <td><input type="text" readonly="" value="<?php echo round($subtotal,2); ?>" name="total"></td>
     </tr>
     <tr>
         <td colspan="4"></td>
