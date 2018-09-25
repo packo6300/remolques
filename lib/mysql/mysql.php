@@ -5,16 +5,16 @@
 function getConnection(){
     $host="localhost";
     $dbu="root";
-    $dbp="";
+    $dbp="fallenito";
     //$dbp="01551025";
     $db=$_SESSION['empresa'];
     $connection=new PDO( "mysql:host=".$host.";dbname=".$db,$dbu, $dbp,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));  
-    //$connection = new PDO("mysql:dbname=$db;host=$host", $dbu, $dbp);
     return $connection;
 }
 
 //funcion de consulta
 function consulta($sql){
+    try{
     $connection = getConnection();
     $stmt = $connection->prepare($sql);
     if ($stmt->execute()) {
@@ -23,6 +23,10 @@ function consulta($sql){
       }else{
         return false;
       }
+    }
+ catch (Exception $e){
+     return false;
+ }
 }
 
 function insert($sql){
