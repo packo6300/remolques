@@ -17,6 +17,7 @@ spl_autoload_register('DOMPDF_autoload');
 $filename="remolques".$iddoc;
 
 $html=  file_get_contents($root.'modulos/'.$url);
+echo $html;
 $pdf=new DOMPDF;
 $pdf->load_html($html);
 $pdf->set_paper('A4','portrait');
