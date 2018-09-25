@@ -64,11 +64,9 @@ include (ROOT."/lib/mysql/mysql.php");
       </div>
         
     </div>
-
+        <br><br><br>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="container">
-        
-    
+    <div class="row">
         <div class="m2">
             <div class="col-lg-2" style=" overflow-y: auto; overflow-x: hidden; height: 100%;">
                 <br>
