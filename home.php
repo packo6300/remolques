@@ -41,8 +41,8 @@ include (ROOT."/lib/mysql/mysql.php");
             
             <div class="m">
             <?php
-                $sql="SELECT * FROM menu where idAdmin=$idUsr group by cabezera";
-                $res=  consulta($sql);
+                $sql="SELECT * FROM menu where idAdmin=:user group by cabezera";
+                $res=  consulta($sql,[":user"=>$idUsr]);
                 foreach ($r as $k => $r) {
                     ?>
                     <ul>
@@ -87,14 +87,17 @@ include (ROOT."/lib/mysql/mysql.php");
                 <?php
                 }
                 ?>
+                <div id="calendar"></div>
             </div>
         </div>
     <div id="pant" class="col-sm-10" style=" background-color: #ebebeb; overflow-y: auto; overflow-x: auto;border-style: dotted;border-width: 1px; height: 39em;">
                   
     </div>
-        
-        <!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->      
-    
+    <script type="text/javascript">
+    $('#calendar').fullCalendar({
+        defaultView: 'month'
+    });
+    </script>    
     <div class="container">
         <footer style="  float: right;   margin-top: 14px;">
           &copy; MyC IT Solutions 2014
