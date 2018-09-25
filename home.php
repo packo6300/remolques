@@ -66,6 +66,8 @@ include (ROOT."/lib/mysql/mysql.php");
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container">
+        
     
         <div class="m2">
             <div class="col-lg-2" style=" overflow-y: auto; overflow-x: hidden; height: 100%;">
@@ -86,19 +88,18 @@ include (ROOT."/lib/mysql/mysql.php");
                 </ul>
                 <?php
                 }
-                ?>
-                
+                ?>                
             </div>
         </div>
-    <div id="pant" class="col-sm-10" style=" background-color: #ebebeb; overflow-y: auto; overflow-x: auto;border-style: dotted;border-width: 1px; height: 39em;">
-    <div id="calendar"></div>
-    <script type="text/javascript">
-        $('#calendar').fullCalendar({
-            defaultView: 'month'
-        });
-    </script>   
-    </div>
-      
+        <div id="pant" class="col-sm-10" style=" background-color: #ebebeb; overflow-y: auto; overflow-x: auto;border-style: dotted;border-width: 1px; height: 39em;">
+        <div id="calendar"></div>
+        <script type="text/javascript">
+            $('#calendar').fullCalendar({
+                defaultView: 'month'
+            });
+        </script>   
+        </div>
+    </div> 
     <div class="container">
         <footer style="  float: right;   margin-top: 14px;">
           &copy; MyC IT Solutions 2014
