@@ -6,7 +6,7 @@ ini_set('error_reporting', 0);
 $root = $_SESSION['ruta'];
 $hospedaje=$_SESSION['hpd'];
 include ($root."/lib/mysql/mysql.php");
-    
+    $motivo=$resp="";
     $idUsr=$_SESSION['idCH'];
     $_SESSION['pg']="productos";
     $_SESSION['tbl']="productos";
