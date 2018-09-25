@@ -43,7 +43,7 @@ include (ROOT."/lib/mysql/mysql.php");
             <?php
                 $sql="SELECT * FROM menu where idAdmin=:user group by cabezera";
                 $res=  consulta($sql,[":user"=>$idUsr]);
-                foreach ($r as $k => $r) {
+                foreach ($res as $k => $r) {
                     ?>
                     <ul>
                         <li onclick="$('#<?php echo $r['cabezera']; ?>').toggle();"><label class="Menu-Titulo"><?php echo $r['cabezera']; ?> </label></li> <?php
