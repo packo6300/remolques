@@ -1,5 +1,5 @@
 <?php
-$inst="/remolques/";
+$inst="/remolques.checktime.com.mx/";
 $hospedaje = "http://".$_SERVER['HTTP_HOST'].$inst;
 $root = $_SERVER['DOCUMENT_ROOT'].$inst;
 if(!isset($_SESSION)){ 
