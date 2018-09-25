@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -9,7 +11,6 @@ $_SESSION['empresa'] = 'remolques2';
 include ($root . "/lib/mysql/mysql.php");
 $usuario = $_POST["usuario"];
 $password = md5($_POST["pss"]);
-echo $usuario.' - '. $password."  ".$root;
 $sql = "SELECT * FROM administrador where Clave= :clave and usuario= :user ;";
 $result = consulta($sql,[":clave"=>$password,":user"=>$usuario]);
 $id = '';
