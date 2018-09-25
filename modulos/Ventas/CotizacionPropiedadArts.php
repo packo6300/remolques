@@ -53,11 +53,11 @@ function elimina(id){
         
     <?php
         echo "  ".$row["descripcion"]."</td>";
-        echo "<td>" .$row["subtotal"]."</td>";
+        echo "<td>" .round($row["subtotal"],2)."</td>";
         echo "<td>" .$row["cantidad"]."</td>";
         $total1=$row["subtotal"]*$row["cantidad"];
         $subtotal=$subtotal+$total1;
-        echo "<td style='text-align: right;'>".$total1."</td>";
+        echo "<td style='text-align: right;'>".round($total1,2)."</td>";
     ?>
     </tr>
     <?php
