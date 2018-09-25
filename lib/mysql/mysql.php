@@ -6,6 +6,7 @@ if(!isset($_SESSION)) {
         session_start(); 
 } 
 function getConnection(){
+    try{
     $host="localhost";
     $dbu="packo";
     $dbp="fallenito";
@@ -13,6 +14,11 @@ function getConnection(){
     $db=$_SESSION['empresa'];
     $connection=new PDO( "mysql:host=".$host.";dbname=".$db,$dbu, $dbp,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));  
     return $connection;
+    }
+    catch(Exception $e){
+       echo $e->getTrace();
+       exit();
+    }
 }
 
 //funcion de consulta
