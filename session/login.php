@@ -9,9 +9,9 @@ $_SESSION['empresa'] = 'remolques2';
 include ($root . "/lib/mysql/mysql.php");
 $usuario = $_POST["usuario"];
 $password = md5($_POST["pss"]);
-echo $usuario.' - '. $password;
-$sql = "SELECT * FROM administrador where Clave='$password' and usuario='$usuario';";
-$result = consulta($sql);
+echo $usuario.' - '. $password."  ".$root;
+$sql = "SELECT * FROM administrador where Clave= :clave and usuario= :user ;";
+$result = consulta($sql,[":clave"=>$password,":user"=>$usuario]);
 $id = '';
 foreach ($result as $k => $row) {
     $id = $row["id"];

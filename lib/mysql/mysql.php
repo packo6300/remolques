@@ -22,11 +22,11 @@ function getConnection(){
 }
 
 //funcion de consulta
-function consulta($sql){
+function consulta($sql,$args=[]){
     try{
     $connection = getConnection();
     $stmt = $connection->prepare($sql);
-    if ($stmt->execute()) {
+    if ($stmt->execute($args)) {
         $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows;
       }else{
