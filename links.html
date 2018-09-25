@@ -1,65 +1,14 @@
-<!DOCTYPE html>
-<!--
-reporte #resntas por remolque(agregar contador)
-editar dias de renta
-editar folio de renta
-listo-- Ov pdf con iva
-iva configurable
-
-plus..
-crear cotizaciones manuales para rentas
-ALTER TABLE `remolques2`.`remolques` ADD COLUMN `rentas` INTEGER UNSIGNED NOT NULL AFTER `stat`;
-insert into roles(0,'Cotizar','modulos/Ventas/Cotizacion.php',1);
-insert into roles(0,'Configuraciones','modulos/Config/ConfiguracionListar.php',2);
-CREATE TABLE `remolques2`.`cotizaciondetail` (
-  `idcotizaciondetail` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idcotizacion` INTEGER UNSIGNED NOT NULL,
-  `descripcion` VARCHAR(500) NOT NULL,
-  `cantidad` DOUBLE NOT NULL,
-  `subtotal` DOUBLE NOT NULL,
-  PRIMARY KEY (`idcotizaciondetail`)
-)
-ENGINE = InnoDB;
-CREATE TABLE  `remolques2`.`cotizacion` (
-  `idcotizacion` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cliente` varchar(250) NOT NULL,
-  `fecha` date NOT NULL,
-  `hora` time NOT NULL,
-  `subtotal` double NOT NULL,
-  `iva` double NOT NULL,
-  `total` double NOT NULL,
-  `saldo` double NOT NULL,
-  `idadmin` int(10) unsigned NOT NULL,
-  `estatus` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`idcotizacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--->
-<html>
-    <head>
-        <title>Remolques aeropuerto</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        body {
-             padding-top: 50px;
-             padding-bottom: 20px;
-             background-color: #F9FFED;
-        }
-        </style>
-         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="icon" type="image/png" href="/img/reloj.png">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link href="css/carousel.css" rel="stylesheet">
-        <link href="css/style-reloj.css" rel="stylesheet" />
-        <script src="js/vendor/jquery-1.11.0.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/jquery/jquery.min.js"></script>
-        <script src="js/ie10-viewport-bug-workaround.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"/>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css"/>
-
-    </head>
-</html>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="/img/reloj.png">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/style-reloj.css" rel="stylesheet" />
+<script src="js/vendor/jquery-1.11.0.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css"/>

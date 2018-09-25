@@ -2,7 +2,6 @@
 if(!isset($_SESSION)){ 
     session_start(); 
 }
-ini_set('error_reporting', 0);
 $root = $_SESSION['ruta'];
 include ($root."/lib/mysql/mysql.php");
 $_SESSION['pg']="clientes";
