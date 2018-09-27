@@ -111,7 +111,7 @@ $idr=$id=$_SESSION['iddoc'];
             $t->assign("rempresa",$row5['empresa']);
             $t->assign("rdir",$row5['dir']);
             $t->assign("rtrab",$row5['trabdir']);  
-			$t->assign("par",$row5['parentesco']); 
+            $t->assign("par",$row5['parentesco']); 
         }
  $t->assign("urlimg",$host."img/logopng.png");
 $t->display($root.'/modulos/Renta/templates/RentaPDF.html');

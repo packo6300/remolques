@@ -18,7 +18,9 @@ include (ROOT."/lib/mysql/mysql.php");
         <?php
         include 'links.html';
         ?>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
     </head>
     <body>
        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
