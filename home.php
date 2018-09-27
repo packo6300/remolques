@@ -92,24 +92,24 @@ include (ROOT."/lib/mysql/mysql.php");
             </div>
         </div>
         <div id="pant" class="col-sm-10" style=" background-color: #ebebeb; overflow-y: auto; overflow-x: auto;border-style: dotted;border-width: 1px; height: 39em;">
-        <div id="calendar"></div>
-        <script type="text/javascript">
-            $('#calendar').fullCalendar();
-        </script>   
+            <div id="calendar"></div>        
         </div>
     </div> 
     <div class="container">
         <footer style="  float: right;   margin-top: 14px;">
-          &copy; MyC IT Solutions 2014
+          &copy; MyC IT Solutions 2018
         </footer>
       </div>
+    <script type="text/javascript">
+        alert('test');
+            $('#calendar').fullCalendar();
+        </script>   
     </body>
 </html>
 <?php
 }
 else{
-    header("location:".$host);
-    ?>
+?>
 <a href="/">inicio</a>
 <?php
 }
