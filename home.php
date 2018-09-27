@@ -94,9 +94,7 @@ include (ROOT."/lib/mysql/mysql.php");
         <div id="pant" class="col-sm-10" style=" background-color: #ebebeb; overflow-y: auto; overflow-x: auto;border-style: dotted;border-width: 1px; height: 39em;">
         <div id="calendar"></div>
         <script type="text/javascript">
-            $('#calendar').fullCalendar({
-                defaultView: 'month'
-            });
+            $('#calendar').fullCalendar();
         </script>   
         </div>
     </div> 
