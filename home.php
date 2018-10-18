@@ -102,8 +102,7 @@ include (ROOT."/lib/mysql/mysql.php");
         </footer>
       </div>
     <script type="text/javascript">
-        alert('test');
-            $('#calendar').fullCalendar();
+             $('#calendar').fullCalendar();
         </script>   
     </body>
 </html>
